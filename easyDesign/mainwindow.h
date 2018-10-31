@@ -10,6 +10,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    bool temp = true;
 };
 
 #endif // MAINWINDOW_H

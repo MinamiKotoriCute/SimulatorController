@@ -14,17 +14,19 @@ class easyUI : public QLabel
         easyUI(QWidget *parent = 0);
         ~easyUI();
 
-        QPixmap *pic, *tPixmap;
+        QPixmap pic, tPixmap;
         bool buttonActionCheck  = false;
         QString buttonActionMode;
 
         void init(int w,int h,int x,int y, QString p);
-        void setButtonAction(const char* mode, bool check = true);
+        void setButtonAction(const char* mode, bool check = true, QString tPixmap = 0);
+        void changeAction(bool check, int time = 0, const char *pic = 0);
     private:
 
         easyMode *easymode;
 
         bool pressed = false;
+        bool enter = false;
         int pressedX,pressedY;
 
         int w,h,x,y;
@@ -33,7 +35,9 @@ class easyUI : public QLabel
         bool eventFilter(QObject *o, QEvent *e);
         void mouseReleaseEvent(QMouseEvent *event);
         void mousePressEvent(QMouseEvent *event);
-
+        void mouseMoveEvent(QMouseEvent *event);
+    signals:
+        void clicked();
 
 };
 
