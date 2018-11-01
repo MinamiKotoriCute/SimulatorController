@@ -64,6 +64,12 @@ void easyUI :: moveAction(bool check, int time, int x, int y, QString mode)
     easymode->moveAction(check, time, x, y, mode);
 }
 
+void easyUI :: changePicture(QString pic)
+{
+    QPixmap tempPic = QPixmap(pic).scaled(w,h);
+    setPixmap(tempPic);
+    easymode->pixmapChange(tempPic);
+}
 
 void easyUI :: mousePressEvent(QMouseEvent *e)
 {
