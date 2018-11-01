@@ -21,6 +21,7 @@ class easyUI : public QLabel
         void init(int w,int h,int x,int y, QString p);
         void setButtonAction(const char* mode, bool check = true, QString tPixmap = 0);
         void changeAction(bool check, int time = 0, const char *pic = 0);
+        void moveAction(bool check, int time = 0, int x = 0, int y = 0, QString mode = 0);
     private:
 
         easyMode *easymode;

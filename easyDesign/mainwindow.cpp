@@ -15,12 +15,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(e,&easyUI::clicked,[=]{
         if(temp)
         {
-            e->changeAction(1,100,"test2.jpg");
+            e->moveAction(1, 10, 200, 200, "normal");
             temp = false;
         }
         else
         {
-            e->changeAction(0);
+            e->moveAction(0);
             temp = true;
         }
     });

@@ -33,6 +33,7 @@ void easyUI :: setButtonAction(const char* mode, bool check, QString tPixmap)
     this->tPixmap = QPixmap(tPixmap).scaled(w,h);
 }
 
+
 bool easyUI :: eventFilter(QObject *o,QEvent *e)
 {
     if (o == this)
@@ -57,6 +58,12 @@ void easyUI :: changeAction(bool check, int time, const char *pic)
 {
     easymode->changeAction(check, time, QPixmap(QString(pic)).scaled(w, h));
 }
+
+void easyUI :: moveAction(bool check, int time, int x, int y, QString mode)
+{
+    easymode->moveAction(check, time, x, y, mode);
+}
+
 
 void easyUI :: mousePressEvent(QMouseEvent *e)
 {

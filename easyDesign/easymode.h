@@ -20,7 +20,12 @@ class easyMode : public QLabel
         void scaled(bool check, int w, int h);
         void conversion(bool check, QPixmap tPixmap);
         void changeAction(bool check, int time, QPixmap cPixmap);
+        void moveAction(bool check, int time, int x, int y, QString mode);
         bool caCheck = false;
+        bool moveLock = false;
+        int moveGrid = 0;
+        int *spaceX, *spaceY;
+        int mvTemp = 0;
 
         QPixmap pixmap,cPixmap;
         QTimer *caTimer, *mvTimer;
