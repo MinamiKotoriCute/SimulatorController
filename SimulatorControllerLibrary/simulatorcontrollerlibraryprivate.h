@@ -32,6 +32,8 @@ private slots:
     void readyRead();
 
 private:
+    void findHwnd();
+
     HWND hwnd;
     QTcpSocket *socket = nullptr;
     QTcpServer *server;
